@@ -14,7 +14,7 @@ s=$HOME/install.sh;rm -f $s;nano $s;chmod 755 $s
 bash $HOME/install.sh -u aaa -p bbb -w 2018 -i 9003
 
 bash <(wget -qO- --no-check-certificate https://github.com/cuongdt1994/qbittorrent-nox-static/raw/master/install.sh -o /dev/null) -u aniverse -p test123
-bash <(curl -Ls https://github.com/Aniverse/qbittorrent-nox-static/raw/master/install.sh) -u aniverse -p test123
+bash <(curl -Ls https://github.com/cuongdt1994/qbittorrent-nox-static/raw/master/install.sh) -u aniverse -p test123
 }
 ################################################################################################
 
@@ -81,12 +81,12 @@ AppCmd=qbittorrent-nox
 AppExec="${BinPath}/${AppCmd}"
 
 if [[ -n $(command -v wget) ]]; then
-    source <(wget -qO- --no-check-certificate https://github.com/Aniverse/inexistence/raw/master/00.Installation/function)
-    source <(wget -qO- --no-check-certificate https://github.com/Aniverse/inexistence/raw/master/00.Installation/check-sys)
+    source <(wget -qO- --no-check-certificate https://github.com/cuongdt1994/inexistence/raw/master/00.Installation/function)
+    source <(wget -qO- --no-check-certificate https://github.com/cuongdt1994/inexistence/raw/master/00.Installation/check-sys)
     serverip=$(wget --no-check-certificate -t1 -T6 -qO- v4.ipv6-test.com/api/myip.php)
 elif [[ -n $(command -v curl) ]]; then
-    source <(curl -Ls https://github.com/Aniverse/inexistence/raw/master/00.Installation/function)
-    source <(curl -Ls https://github.com/Aniverse/inexistence/raw/master/00.Installation/check-sys)
+    source <(curl -Ls https://github.com/cuongdt1994/inexistence/raw/master/00.Installation/function)
+    source <(curl -Ls https://github.com/cuongdt1994/inexistence/raw/master/00.Installation/check-sys)
     serverip=$(curl -s v4.ipv6-test.com/api/myip.php)
 fi
 set_variables_log_location
@@ -122,10 +122,10 @@ function configure_qbittorrent_nox(){
             useradd $iUser -m  >> $OutputLOG 2>&1
         fi
         # echo "$iUser:$iPass" | chpasswd >> $OutputLOG 2>&1
-        bash <(wget -qO- --no-check-certificate https://github.com/Aniverse/inexistence/raw/master/00.Installation/package/qbittorrent/configure -o /dev/null) -u $iUser -p $iPass -w $wPort -i $iPort
+        bash <(wget -qO- --no-check-certificate https://github.com/cuongdt1994/inexistence/raw/master/00.Installation/package/qbittorrent/configure -o /dev/null) -u $iUser -p $iPass -w $wPort -i $iPort
         echo -e "\n${cyan}qBittorrent WebUI${normal} http://$serverip:$wPort\n"
     else
-        wget --no-check-certificate https://github.com/Aniverse/inexistence/raw/master/00.Installation/package/qbittorrent/configure -O ${BinPath}/qbconf >> $OutputLOG 2>&1
+        wget --no-check-certificate https://github.com/cuongdt1994/inexistence/raw/master/00.Installation/package/qbittorrent/configure -O ${BinPath}/qbconf >> $OutputLOG 2>&1
         chmod +x ${BinPath}/qbconf
     fi
 }
