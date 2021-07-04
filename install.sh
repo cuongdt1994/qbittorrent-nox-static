@@ -13,7 +13,7 @@ pacman -S --noconfirm nano # wget
 s=$HOME/install.sh;rm -f $s;nano $s;chmod 755 $s
 bash $HOME/install.sh -u aaa -p bbb -w 2018 -i 9003
 
-bash <(wget -qO- --no-check-certificate https://github.com/Aniverse/qbittorrent-nox-static/raw/master/install.sh -o /dev/null) -u aniverse -p test123
+bash <(wget -qO- --no-check-certificate https://github.com/cuongdt1994/qbittorrent-nox-static/raw/master/install.sh -o /dev/null) -u aniverse -p test123
 bash <(curl -Ls https://github.com/Aniverse/qbittorrent-nox-static/raw/master/install.sh) -u aniverse -p test123
 }
 ################################################################################################
